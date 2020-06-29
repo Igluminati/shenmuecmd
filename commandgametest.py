@@ -6,7 +6,7 @@ import os
 import time
 import random
 
-os.system("cls")
+os.system("clear")
 
 COLOURS = {\
 "black":"\u001b[30;1m",
@@ -73,7 +73,7 @@ class character:
     self.name = ""
     self.health = 1
     self.health_max = 1
-  
+
 
 class Player(character):
   def __init__(self):
@@ -84,7 +84,7 @@ class Player(character):
 class Enemy(character):
   def __init__(self):
     self.name = ''
-    self.health = randint(1, player.health)
+    self.health = randint(1, 100)
 
 def oneortwo():
     option = input()
@@ -111,28 +111,44 @@ def confirm():
 
 p = Player()
 
-def character_creation():    
+def character_creation():
     p.name = input("What's your name? ")
     p.age =  input("How old are you? ")
-    print("Your name is {} and you are {} years old. Is this correct?".format(p.name,p.age))
-    confirm()
+
+    try:
+        val = int(p.age)
+    except ValueError:
+        print("Your age must be an integer! (duh)")
+        character_creation()
+    else:
+        print("Your name is {} and you are {} years old. Is this correct?".format(p.name,p.age))
+        confirm()
 
 ### Main Menu ###
 def menu_selections():
     option = input()
     while option != "1" and option != "2" and option != "3" and option != "4":
-        print("##########################")
-        print("# The Hartman Chronicles #")
-        print("##########################")
-        print("#       1) New Game      #")
-        print("#       2) Load Game     #")
-        print("#       3) Help          #")
-        print("#       4) Quit          #")
-        print("#Copyright 2020 Chensoft #")
-        print("##########################")
-        print("\nPlease press 1, 2, 3 or 4\n")
+        menu2 = "# The Hartman Chronicles #"
+        menu3 = "##########################"
+        menu4 = "#       [[red]]1) [[white]]New Game      #"
+        menu5 = "#       [[red]]2) [[white]]Load Game     #"
+        menu6 = "#       [[red]]3) [[white]]Help          #"
+        menu7 = "#       [[red]]4) [[white]]Quit          #"
+        menu8 = "#Copyright 2020 Chensoft #"
+        menu9 = "##########################"
+        menu10 = "\nPlease press [[red]]1[[white]], [[red]]2[[white]], [[red]]3 [[white]]or [[red]]4[[white]]\n"
+        print(colourText(menu1))
+        print(colourText(menu2))
+        print(colourText(menu3))
+        print(colourText(menu4))
+        print(colourText(menu10))
+        print(colourText(menu6))
+        print(colourText(menu7))
+        print(colourText(menu8))
+        print(colourText(menu9))
+        print(colourText(menu10))
         option = input()
-        
+
     if option == ("1"):
         character_creation()
     elif option == ("2"):
