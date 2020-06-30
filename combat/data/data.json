@@ -1,0 +1,30 @@
+{
+	"prefixes": {
+		"player": "You",
+		"enemy": "{}"
+	},
+
+	"templates": {
+		"initial_mana_regen": "restored {} mana.",
+
+		"rested_and_restored_mana": "rested and restored {} mana",
+
+		"fled": "successfully fled from the battle",
+		"unable_to_flee": "were unable to flee from the battle.",
+
+		"insufficient_mana": "do not have enough mana for that spell",
+		
+		"player_attack_evaded": "evaded your attack!",
+		"enemy_attack_evaded": "evaded {}'s attack!",
+
+		"critical_hit": "landed a critical hit!",
+		"damage_dealt": "{attack} {opponent}, dealing {damage} damage",
+
+		"victory": "have won the battle!"
+	},
+
+	"actions": {
+		"choose_attack": "{attack_description}.",
+		"choose_spell": "{spell_description}\nMana cost: {}."
+	}
+}
